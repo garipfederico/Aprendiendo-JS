@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href=".\css\planificador.css">
+	<script src=".\js\planificador.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=B612+Mono|Roboto&display=swap');
+	</style> 
+	<title> </title>
+</head>
+ 
+<body onload="cargarAño()"> 
+	<h1>Planificador de materias </h1>
+	<form>
+		<fieldset>
+			<legend>Especialidad</legend>
+				<input type="button" name="Carrera" value="Analista" onclick="ocultar('ingenieria','analista')" >
+				<input type="button" name="Carrera" value="Ingenieria" onclick="ocultar('analista','ingenieria')">
+		</fieldset>
+		<fieldset>
+			<legend>Nivel completo (Materias aprobadas)</legend>
+				<input type="radio" name="Año" value="primero"> 1ro
+				<input type="radio" name="Año" value="segundo"> 2do
+		</fieldset>
+	</form>
+	<table id="Tabla">
+		<caption id="añoInicial" class="tablaTitulo">Estado actual de las materias</caption>
+		<thead>
+			<tr id="Encabezado">
+				<th>Id.</th>
+				<th>Materia</th>
+				<th>Nivel</th>
+				<th>Estado</th>
+				<th>Correl. p/ cursar</th>
+				<th>Correl. p/ rendir</th></tr>
+		</thead>
+		<tbody id="materias">
+			<tr class="Oculto"><td>0</td>
+				<td>Cursillo de ingreso</td>
+				<td>0</td>
+				<td>Aprobada</td>
+				<td></td>
+				<td></td></tr>
+			<tr class="comun"><td>1</td>
+				<td>analisis matematico</td>
+				<td>1</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="comun"><td>2</td>
+				<td>algebra y geometria analitica </td>
+				<td>1</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="comun"><td>3</td>
+				<td>fisica I </td>
+				<td>1</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="comun"><td>4</td>
+				<td>fisica II </td>
+				<td>2</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1R,2R,3R</td>
+				<td>1A,2A,3A</td></tr>
+			<tr class="ingenieria"><td>5</td>
+				<td>Comunicaciones</td>
+				<td>3</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="comun"><td>6</td>
+				<td>paradigmas de programacion </td>
+				<td>2</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="comun"><td>7</td>
+				<td>probabilidad y estadistica </td>
+				<td>3</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="analista"><td>8</td>
+				<td>comunicacion y redes informaticas</td>
+				<td>3</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			<tr class="ingenieria"><td>9</td>
+				<td>Redes informaticas</td>
+				<td>4</td>
+				<td onclick="setEstado(this)" class="NC">No Cursada</td>
+				<td>1</td>
+				<td>1</td></tr>
+			</tbody>
+	</table>
+	<button onclick="disponibilidadAñosiguiente()">Calcular diponibilidad del año siguiente</button>
+	<button onclick="setEstadoInicial()">Establecer estado inicial</button>
+
+
+</body>
+
+
+
