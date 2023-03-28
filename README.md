@@ -1,2 +1,2 @@
-# 2018/19 Aprendiendo Js
+# 2018/19 Js
 #2019 Programa para calcular las correlatividades de las materias para rendir y para cursar segun el estado actual, el cual es ingresado por el usuario
